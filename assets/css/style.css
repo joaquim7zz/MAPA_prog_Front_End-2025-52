@@ -1,0 +1,235 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 74px 25px;
+    position: fixed;
+    background-color: #FFFFFF;
+    z-index: 2;
+}
+
+.header-titulo {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    gap: 20px;
+}
+
+.main-nav_link {
+    padding-top: 15px;
+    color: #353535;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+.main-nav_link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #416BDE;
+    transition: width 0.3s ease-in-out;
+}
+
+.main-nav_link:hover {
+    color: #416BDE;
+}
+
+.main-nav_link:hover::after {
+    width: 100%;
+}
+
+.section-inicio {
+    background-color: #1A42A8;
+    text-align: center;
+    width: 100%;
+    height: 70vh;
+
+}
+
+.section-inicio_titulo {
+    font-size: 5rem;
+    color: #FFFFFF;
+    padding: 160px 0 24px;
+}
+
+.section-inicio_subtitulo {
+    font-weight: lighter;
+    color: #FFFFFF;
+    padding: 0 0 48px;
+}
+
+.section-inicio_botao {
+    font-size: x-large;
+    font-weight: bold;
+    color: #1A42A8;
+    background: linear-gradient(145deg, #EAB308, #F59E0B);
+    padding: 24px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+        0 8px 32px rgba(234, 179, 8, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    min-width: 200px;
+    z-index: 1;
+}
+
+.section-inicio_botao::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
+    transition: left 0.6s ease;
+}
+
+.section-inicio_botao:hover::before {
+    left: 100%;
+}
+
+.section-inicio_botao:hover {
+    padding: 30px;
+    transform: translateY(-5px) scale(1.05);
+    background: linear-gradient(145deg, #F59E0B, #EAB308);
+
+}
+
+.section-inicio_botao:active {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow:
+        0 8px 25px rgba(234, 179, 8, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.section-servicos {
+    margin-top: 80px;
+}
+
+.section-servicos_titulo {
+    text-align: center;
+    padding: 5px;
+}
+
+.section-caixas_servicos {
+    margin-top: 80px;
+    display: flex;
+    gap: 90px;
+    justify-content: center;
+}
+
+.section-caixa_servicos__filho {
+    width: 360px;
+    height: 510px;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(145deg, #1A42A8, #416BDE);
+    padding: 24px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+        0 8px 32px rgba(69, 69, 69, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+    text-align: center;
+    min-width: 200px;
+}
+
+.section-caixa_servicos__filho::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
+    transition: left 0.6s ease;
+}
+
+.section-caixa_servicos__filho:hover::before {
+    left: 100%;
+}
+
+.section-caixa_servicos__filho:hover {
+    padding: 30px;
+    transform: translateY(-5px) scale(1.05);
+    background: linear-gradient(145deg, #1A42A8, #416BDE);
+    box-shadow:
+        0 15px 50px rgba(60, 60, 60, 0.4),
+        inset 0 1px 0 rgba(60, 60, 60, 0.4),
+        0 0 30px rgba(60, 60, 60, 0.4);
+}
+
+.section-caixa_servicos__filho:active {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow:
+        0 8px 25px rgba(234, 179, 8, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+
+.icone-caixa {
+    padding: 75px;
+    font-size: 6em;
+}
+
+.caixa-servicos_titulo {
+    font-size: 1.5em;
+}
+
+.caixa-servicos_traco {
+    margin: 20px auto 0px;
+    width: 140px;
+    height: 8px;
+    background-color: #EAB308;
+    border-radius: 16px;
+}
+
+.caixa-servicos_paragrafo {
+    font-size: 1.5em;
+    font-weight: lighter;
+    text-align: center;
+    padding: 20px;
+}
+
+footer {
+    background-color: #1A42A8;
+    margin-top: 100px;
+    width: 100%;
+    color: #FFFFFF;
+}
+
+.paragrafo-rodape {
+    padding: 20px;
+    font-size: 1.5em;
+    text-align: center;
+}
