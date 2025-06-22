@@ -43,13 +43,52 @@
     }
 }
 
+/* Mostra o menu hamburger e esconde a navegação principal */
 @media (max-width: 780px) {
+    .menu-hamburger {
+        display: flex;
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Começa fora da tela */
+        width: 60%;
+        height: 100vh;
+        background-color: #ffffff;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        transition: right 0.4s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    }
+    
+    /* Quando o menu está ativo */
+    .main-nav.active {
+        right: 0; /* Move para dentro da tela */
+    }
+
     .main-nav_link {
-        display: none;
+        display: block; /* Garante que os links fiquem visíveis */
+        font-size: 1.5em;
+        color: #353535;
+    }
+    
+    /* Animação do botão hamburger para "X" */
+    .menu-hamburger.open .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-7px, 7px);
+    }
+
+    .menu-hamburger.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-hamburger.open .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-7px, -7px);
     }
 
     .section-inicio_titulo {
-
         font-size: 2em;
     }
 
@@ -62,13 +101,13 @@
 
 @media (max-width: 445px) {
     .section-inicio_titulo {
-        font-size: 1.5em;
+        font-size: 1.6em;
     }
 
     .section-inicio_subtitulo {
-        font-size: 1em;
+        font-size: 1.1em;
         font-weight: 200;
-
+        padding-inline: 45px;
     }
 
     .section-inicio_botao {
@@ -78,6 +117,7 @@
     .section-caixa_servicos__filho {
         font-size: small;
     }
+
 }
 
 /*Adapta a página para telas de celular pequenos (iphone 5 ou semelhantes) ou legados*/
@@ -92,6 +132,7 @@
 
     .section-inicio_subtitulo {
         display: none;
+        padding: 50px;
     }
 
     .section-caixa_servicos__filho {

@@ -1,3 +1,8 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -6,10 +11,11 @@ header {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 25px 74px 25px;
     position: fixed;
     background-color: #FFFFFF;
-    z-index: 2;
+    z-index: 1000; /* Garante que o header fique sobre outros elementos */
 }
 
 .header-titulo {
@@ -17,6 +23,7 @@ header {
     font-weight: bold;
 }
 
+/* Estilos para o menu de navegação principal */
 .main-nav {
     display: flex;
     justify-content: center;
@@ -50,17 +57,41 @@ header {
     width: 100%;
 }
 
+/* Esconde o menu hamburger em telas maiores */
+.menu-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1100; /* Garante que o botão fique sobre a navegação */
+}
+
+.menu-hamburger .bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #353535;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+
 .section-inicio {
-    background-color: #1A42A8;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('[https://images.unsplash.com/photo-1637241612956-b7309005288b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D](https://images.unsplash.com/photo-1637241612956-b7309005288b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)') no-repeat center center/cover;
     text-align: center;
     width: 100%;
     height: 70vh;
-
+    border-radius: 16px;
 }
 
 .section-inicio_titulo {
     font-size: 5rem;
-    color: #FFFFFF;
+    color: #FFF;
     padding: 160px 0 24px;
 }
 
@@ -125,6 +156,17 @@ header {
 .section-servicos_titulo {
     text-align: center;
     padding: 5px;
+    color: #1A42A8;
+
+}
+
+.caixa-servicos_traco_titulo {
+    margin: 0 auto; /* Centraliza o traço */
+    border-radius: 16px;
+    width: 180px;
+    height: 6px;
+    background-color: #1A42A8;
+    box-shadow: 5px 6px 16px 2px #00000087;
 }
 
 .section-caixas_servicos {
