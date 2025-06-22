@@ -1,0 +1,110 @@
+/*Código de resposividade tela inicial*/
+@media (max-width: 1280px) {
+    .section-caixas_servicos {
+        gap: 50px;
+        flex-wrap: wrap;
+        padding: 0 20px;
+    }
+
+}
+
+/*Adapta a página para telas de até 1120 pixels*/
+@media (max-width: 1120px) {
+    header {
+        padding: 20px 40px;
+    }
+
+    .header-titulo {
+        font-size: 1.8em;
+    }
+
+    .main-nav {
+        gap: 15px;
+    }
+
+    .section-inicio {
+        height: 63vh;
+    }
+
+    .section-inicio_titulo {
+        font-size: 4rem;
+        padding: 120px 0 24px;
+    }
+}
+
+/*Adapta a página para telas médias como tablets ou modo de rotação*/
+@media (max-width: 920px) {
+    .header-titulo {
+        font-size: 1.6em;
+    }
+
+    .section-inicio_titulo {
+        font-size: 3em;
+    }
+}
+
+@media (max-width: 780px) {
+    .main-nav_link {
+        display: none;
+    }
+
+    .section-inicio_titulo {
+
+        font-size: 2em;
+    }
+
+    .section-inicio_subtitulo {
+        font-size: 1em;
+    }
+}
+
+/*Adapta a página para telas de até 445 pixels, celulares de tamanho normal s20, Iphone 14 e semelhantes*/
+
+@media (max-width: 445px) {
+    .section-inicio_titulo {
+        font-size: 1.5em;
+    }
+
+    .section-inicio_subtitulo {
+        font-size: 1em;
+        font-weight: 200;
+
+    }
+
+    .section-inicio_botao {
+        font-size: large;
+    }
+
+    .section-caixa_servicos__filho {
+        font-size: small;
+    }
+}
+
+/*Adapta a página para telas de celular pequenos (iphone 5 ou semelhantes) ou legados*/
+@media (max-width: 330px) {
+    .header-titulo {
+        font-size: 1em;
+    }
+
+    .section-inicio {
+        height: 70vh;
+    }
+
+    .section-inicio_subtitulo {
+        display: none;
+    }
+
+    .section-caixa_servicos__filho {
+        font-weight: lighter;
+
+    }
+
+    .caixa-servicos_traco {
+        margin: 20px auto 0px;
+        width: 110px;
+        height: 6px;
+        background-color: #EAB308;
+        border-radius: 16px;
+    }
+
+}
