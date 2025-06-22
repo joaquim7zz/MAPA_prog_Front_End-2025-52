@@ -52,7 +52,7 @@
     .main-nav {
         position: fixed;
         top: 0;
-        right: -100%; /* Começa fora da tela */
+        right: -100%; /* Começa fora da tela */ 
         width: 60%;
         height: 100vh;
         background-color: #ffffff;
@@ -66,11 +66,11 @@
     
     /* Quando o menu está ativo */
     .main-nav.active {
-        right: 0; /* Move para dentro da tela */
+        right: 0; 
     }
 
     .main-nav_link {
-        display: block; /* Garante que os links fiquem visíveis */
+        display: block; /* Para que os links fiquem visíveis */
         font-size: 1.5em;
         color: #353535;
     }
