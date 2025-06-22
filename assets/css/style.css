@@ -18,9 +18,8 @@ header {
     z-index: 1000;
 }
 
-.header-titulo {
-    font-size: 2em;
-    font-weight: bold;
+.logo-conecta {
+    width: 5em;
 }
 
 /* Estilos para o menu de navegação principal */
