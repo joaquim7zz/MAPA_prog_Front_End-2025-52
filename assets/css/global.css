@@ -144,10 +144,10 @@ footer {
     background-color: #1A42A8;
     margin-top: 100px;
     width: 100%;
-    color: #FFFFFF;
 }
 
 .paragrafo-rodape {
+    color: #FFFFFF;
     padding: 20px;
     font-size: 1.5em;
     text-align: center;
