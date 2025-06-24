@@ -1,0 +1,154 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*Estilo padrão do cabeçalho, menu hamburger e rodapé*/
+
+/*Estilo cabeçalho e menu de navegação*/
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 74px 25px;
+    position: fixed;
+    background-color: #FFFFFF;
+    z-index: 1000;
+}
+
+.logo-conecta {
+    width: 5em;
+}
+
+/* Estilos para o menu de navegação principal */
+.main-nav {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    gap: 20px;
+}
+
+.main-nav_link {
+    padding-top: 15px;
+    color: #353535;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+.main-nav_link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #416BDE;
+    transition: width 0.3s ease-in-out;
+}
+
+.main-nav_link:hover {
+    color: #416BDE;
+}
+
+.main-nav_link:hover::after {
+    width: 100%;
+}
+
+/*configuração do menu hamburger*/
+/* Esconde o menu hamburger em telas maiores */
+.menu-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1100;
+}
+
+.menu-hamburger .bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #353535;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Mostra o menu hamburger e esconde a navegação principal */
+@media (max-width: 780px) {
+    .menu-hamburger {
+        display: flex;
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        /* Começa fora da tela */
+        width: 60%;
+        height: 100vh;
+        background-color: #ffffff;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        transition: right 0.4s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Quando o menu está ativo */
+    .main-nav.active {
+        right: 0;
+    }
+
+    .main-nav_link {
+        display: block;
+        /* Para que os links fiquem visíveis */
+        font-size: 1.5em;
+        color: #353535;
+    }
+
+    /* Animação do botão hamburger para "X" */
+    .menu-hamburger.open .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-7px, 7px);
+    }
+
+    .menu-hamburger.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-hamburger.open .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-7px, -7px);
+    }
+
+    .section-inicio_titulo {
+        font-size: 2em;
+    }
+
+    .section-inicio_subtitulo {
+        font-size: 1em;
+    }
+}
+
+
+/*estilo rodapé*/
+footer {
+    background-color: #1A42A8;
+    margin-top: 100px;
+    width: 100%;
+    color: #FFFFFF;
+}
+
+.paragrafo-rodape {
+    padding: 20px;
+    font-size: 1.5em;
+    text-align: center;
+}

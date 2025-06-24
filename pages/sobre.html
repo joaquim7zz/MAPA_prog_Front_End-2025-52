@@ -1,404 +1,87 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Constrular Materiais - Sua Construção Começa Aqui</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Font - Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        /* Custom scrollbar for a cleaner look */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #a0a0a0; /* Slightly darker for modern feel */
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #777;
-        }
+    <title>Conecta Construção</title>
+    <link rel="shortcut icon" href="/assets/img/logo-p-conecta.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/global.css">
+    <link rel="stylesheet" href="/assets/css/style-sobre.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
 
-        /* Keyframe animations */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Apply animations */
-        .animate-fade-in-down {
-            animation: fadeInDown 0.8s ease-out forwards;
-        }
-        .animate-fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-        .animate-fade-in {
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-
-        /* Delay for sequential animations */
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-400 { animation-delay: 0.4s; }
-        .delay-600 { animation-delay: 0.6s; }
-
-        /* Style for section visibility on scroll */
-        .section-hidden {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .section-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+    <script src="https://kit.fontawesome.com/821c37cef2.js" crossorigin="anonymous"></script>
 </head>
-<body class="bg-gradient-to-br from-gray-50 to-gray-200 text-gray-900">
 
-    <!-- Header Section -->
-    <header class="bg-white shadow-xl py-4 sticky top-0 z-50">
-        <div class="container mx-auto flex justify-between items-center px-6">
-            <a href="#" class="text-3xl font-extrabold text-blue-800 rounded-lg p-2 hover:text-blue-900 transition-colors duration-300">
-                Constrular Materiais
-            </a>
-            <nav class="hidden md:flex space-x-8">
-                <a href="#home" class="text-gray-700 hover:text-blue-700 font-semibold transition-colors duration-300 relative group">
-                    Início
-                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-700 transition-all duration-300 group-hover:w-full"></span>
-                </a>
-                <a href="#products" class="text-gray-700 hover:text-blue-700 font-semibold transition-colors duration-300 relative group">
-                    Produtos
-                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-700 transition-all duration-300 group-hover:w-full"></span>
-                </a>
-                <a href="#services" class="text-gray-700 hover:text-blue-700 font-semibold transition-colors duration-300 relative group">
-                    Serviços
-                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-700 transition-all duration-300 group-hover:w-full"></span>
-                </a>
-                <a href="#contact" class="text-gray-700 hover:text-blue-700 font-semibold transition-colors duration-300 relative group">
-                    Contato
-                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-700 transition-all duration-300 group-hover:w-full"></span>
-                </a>
-            </nav>
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none focus:text-blue-700 rounded-md p-2">
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-        </div>
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white mt-2 border-t border-gray-200 shadow-inner">
-            <nav class="flex flex-col items-center py-4 space-y-3">
-                <a href="#home" class="text-gray-700 hover:text-blue-700 font-medium transition-colors duration-300 w-full text-center py-2 rounded-md hover:bg-gray-100">Início</a>
-                <a href="#products" class="text-gray-700 hover:text-blue-700 font-medium transition-colors duration-300 w-full text-center py-2 rounded-md hover:bg-gray-100">Produtos</a>
-                <a href="#services" class="text-gray-700 hover:text-blue-700 font-medium transition-colors duration-300 w-full text-center py-2 rounded-md hover:bg-gray-100">Serviços</a>
-                <a href="#contact" class="text-gray-700 hover:text-blue-700 font-medium transition-colors duration-300 w-full text-center py-2 rounded-md hover:bg-gray-100">Contato</a>
-            </nav>
-        </div>
+<body>
+    <header>
+
+        <a href="/index.html"><img class="logo-conecta" src="/assets/img/logo-conecta.png"
+                alt="logo Conecta construção"></a>
+
+        <button class="menu-hamburger" id="menu-hamburger" aria-label="Abrir menu" aria-haspopup="true"
+            aria-controls="menu" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+
+        <nav class="main-nav" id="menu">
+            <a class="main-nav_link" href="/index.html">Início</a>
+            <a class="main-nav_link" href="produtos.html">Produtos</a>
+            <a class="main-nav_link" href="contato.html">Contato</a>
+            <a class="main-nav_link" href="sobre.html">sobre</a>
+        </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="relative bg-gradient-to-r from-blue-700 to-blue-900 text-white py-24 md:py-40 overflow-hidden shadow-lg rounded-b-3xl">
-        <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('https://placehold.co/1920x1080/0A2C55/FFFFFF?text=Modern+Construction+Materials');"></div>
-        <div class="container mx-auto text-center relative z-10 px-6">
-            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-8 animate-fade-in-down">
-                Sua Visão, Nossa Construção.
-            </h1>
-            <p class="text-lg md:text-2xl mb-10 max-w-3xl mx-auto animate-fade-in-up delay-200">
-                Encontre tudo para sua obra, da fundação ao último detalhe, com qualidade incomparável e atendimento de excelência.
-            </p>
-            <a href="#products" class="bg-yellow-400 text-blue-900 px-10 py-5 rounded-full text-xl font-bold hover:bg-yellow-500 transition-all duration-300 transform hover:scale-105 shadow-xl animate-fade-in delay-400">
-                Explore Nossos Produtos
-            </a>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section id="products" class="py-20 md:py-32 bg-gray-100 section-hidden">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-blue-800 animate-fade-in-up">Nossos Produtos</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-                <!-- Product Card 1 -->
-                <div class="bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in-up delay-200">
-                    <img src="https://placehold.co/600x400/C0C0C0/333333?text=Cimentos+e+Argamassas" alt="Cimentos e Argamassas" class="w-full h-56 object-cover">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-3 text-blue-700">Cimentos e Argamassas</h3>
-                        <p class="text-gray-700 mb-6 leading-relaxed">
-                            A base sólida para toda e qualquer construção. Oferecemos os melhores produtos para garantir durabilidade e resistência.
-                        </p>
-                        <a href="#" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-300 group">
-                            Saiba Mais
-                            <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Product Card 2 -->
-                <div class="bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in-up delay-300">
-                    <img src="https://placehold.co/600x400/C0C0C0/333333?text=Ferragens+e+Aços" alt="Ferragens e Aços" class="w-full h-56 object-cover">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-3 text-blue-700">Ferragens e Aços</h3>
-                        <p class="text-gray-700 mb-6 leading-relaxed">
-                            A estrutura que sustenta seus sonhos. Produtos de alta resistência para segurança e solidez.
-                        </p>
-                        <a href="#" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-300 group">
-                            Saiba Mais
-                            <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Product Card 3 -->
-                <div class="bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in-up delay-400">
-                    <img src="https://placehold.co/600x400/C0C0C0/333333?text=Revestimentos+Modernos" alt="Revestimentos" class="w-full h-56 object-cover">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-3 text-blue-700">Revestimentos</h3>
-                        <p class="text-gray-700 mb-6 leading-relaxed">
-                            Dê vida aos seus ambientes com nossa vasta coleção de pisos, azulejos e porcelanatos, das tendências atuais.
-                        </p>
-                        <a href="#" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-300 group">
-                            Saiba Mais
-                            <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Product Card 4 -->
-                <div class="bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in-up delay-500">
-                    <img src="https://placehold.co/600x400/C0C0C0/333333?text=Tintas+Premium" alt="Tintas e Acessórios" class="w-full h-56 object-cover">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-3 text-blue-700">Tintas e Acessórios</h3>
-                        <p class="text-gray-700 mb-6 leading-relaxed">
-                            Cores que inspiram e acessórios que facilitam, para um acabamento impecável em cada detalhe.
-                        </p>
-                        <a href="#" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-300 group">
-                            Saiba Mais
-                            <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Product Card 5 -->
-                <div class="bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in-up delay-600">
-                    <img src="https://placehold.co/600x400/C0C0C0/333333?text=Hidráulica+e+Elétrica+Eficiente" alt="Hidráulica e Elétrica" class="w-full h-56 object-cover">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-3 text-blue-700">Hidráulica e Elétrica</h3>
-                        <p class="text-gray-700 mb-6 leading-relaxed">
-                            Soluções inteligentes e seguras para suas instalações, garantindo eficiência e tranquilidade.
-                        </p>
-                        <a href="#" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-300 group">
-                            Saiba Mais
-                            <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Product Card 6 -->
-                <div class="bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in-up delay-700">
-                    <img src="https://placehold.co/600x400/C0C0C0/333333?text=Ferramentas+Profissionais" alt="Ferramentas" class="w-full h-56 object-cover">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-3 text-blue-700">Ferramentas</h3>
-                        <p class="text-gray-700 mb-6 leading-relaxed">
-                            Do profissional ao entusiasta, a ferramenta certa para cada desafio, garantindo precisão e agilidade.
-                        </p>
-                        <a href="#" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-300 group">
-                            Saiba Mais
-                            <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
+    <main class="main-sobre">
+        <section class="section-sobre">
+            <div class="sobre">
+                <h1 class="sobre-titulo">Sobre nós</h1>
+                <div class="linha-div"></div>
+                <h2 class="sobre-subtitulo">Conecta Construção - Conectando você à sua obra!</h2>
+                <h3 class="sobre-subtitulo">Construa com facilidade, construa conosco.</3>
+                    <p class="sobre-paragrafo">Na <strong>Conecta Construção</strong>, somos mais que uma loja de materiais de construção - somos
+                        seu parceiro em cada etapa da sua obra. Nosso compromisso é fornecer soluções práticas, acessíveis e
+                        rápidas para quem deseja construir, reformar ou transformar qualquer espaço.</p>
+                    <p class="sobre-paragrafo">Atendemos tanto clientes finais quanto construtoras, pedreiros e profissionais da área, oferecendo
+                        uma ampla variedade de produtos de qualidade, desde materiais básicos até itens especializados.</p>
+                <img src="/assets/img/func-conecta.png" alt="">
             </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-20 md:py-32 bg-blue-800 text-white section-hidden">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 animate-fade-in-up">Nossos Serviços</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-                <div class="bg-blue-900 p-10 rounded-2xl shadow-xl transform transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in-up delay-200">
-                    <svg class="w-20 h-20 mx-auto mb-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2-1.343-2-3-2zM12 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2-1.343-2-3-2zM12 2a2 2 0 00-2 2v1a2 2 0 002 2h0a2 2 0 002-2V4a2 2 0 00-2-2zM12 18a2 2 0 00-2 2v1a2 2 0 002 2h0a2 2 0 002-2v-1a2 2 0 00-2-2z"></path>
-                    </svg>
-                    <h3 class="text-2xl font-bold mb-3">Entrega Rápida</h3>
-                    <p class="text-blue-200 leading-relaxed">
-                        Receba seus materiais no prazo e no local da sua obra, com máxima eficiência e segurança.
-                    </p>
+                <div class="sobre-conteudo">
+                    <h2 class="sobre-conteudo_subtitulo">O que oferecemos:</h2>
+                    <ul>
+                        <li>Materiais de construção de qualidade</li>
+                        <li>Entrega ráda e eficiente</li>
+                        <li>Consultoria especializada</li>
+                        <li>Orçamento personalizado sem compromisso</li>
+                    </ul>
                 </div>
-                <div class="bg-blue-900 p-10 rounded-2xl shadow-xl transform transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in-up delay-300">
-                    <svg class="w-20 h-20 mx-auto mb-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                    </svg>
-                    <h3 class="text-2xl font-bold mb-3">Orçamento Personalizado</h3>
-                    <p class="text-blue-200 leading-relaxed">
-                        Construímos a melhor solução para o seu projeto, com preços competitivos e sem surpresas.
-                    </p>
+                <div class="sobre-conteudo">
+                    <h2 class="sobre-conteudo_subtitulo">Nosso diferenciais:</h2>
+                    <ul>
+                        <li>Preço que cabe no seu bolso</li>
+                        <li>Agilidade na entrega, direto na sua obra</li>
+                        <li>Atendimento próximo, humano e personalizado</li>
+                    </ul>
                 </div>
-                <div class="bg-blue-900 p-10 rounded-2xl shadow-xl transform transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in-up delay-400">
-                    <svg class="w-20 h-20 mx-auto mb-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.001 12.001 0 002 12c0 2.686.684 5.344 1.986 7.747L12 22l8.014-2.253C21.316 17.344 22 14.686 22 12c0-3.155-.783-6.126-2.19-8.756z"></path>
-                    </svg>
-                    <h3 class="text-2xl font-bold mb-3">Consultoria Técnica</h3>
-                    <p class="text-blue-200 leading-relaxed">
-                        Nossos especialistas estão prontos para oferecer o suporte técnico necessário para cada etapa da sua obra.
-                    </p>
+                <div class="texto-final">
+                    <p class="texto-final_paragrafo">Aqui na <strong>Conecta Construção</strong>, acreditamos que construir deve ser uma experiência
+                        simples, segura e acessível. Por isso, estamos sempre prontos para te ajudar, seja na escolha dos
+                        materiais, no melhor custo-benefício ou na agilidade que sua obra precisa.</p>
+                    <h2 class="texto-final_subtitulo">Conecta Construção - Conectando você à sua obra!</h2>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 md:py-32 bg-gray-100 section-hidden">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-blue-800 animate-fade-in-up">Fale Conosco</h2>
-            <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-xl p-8 md:p-14 animate-fade-in delay-200">
-                <form class="space-y-8">
-                    <div>
-                        <label for="name" class="block text-gray-700 text-lg font-medium mb-3">Nome Completo</label>
-                        <input type="text" id="name" name="name" class="w-full px-5 py-4 rounded-xl border border-gray-300 focus:outline-none focus:ring-4 focus:ring-blue-200 transition-all duration-300 placeholder-gray-500 text-lg" placeholder="Seu nome">
-                    </div>
-                    <div>
-                        <label for="email" class="block text-gray-700 text-lg font-medium mb-3">Email</label>
-                        <input type="email" id="email" name="email" class="w-full px-5 py-4 rounded-xl border border-gray-300 focus:outline-none focus:ring-4 focus:ring-blue-200 transition-all duration-300 placeholder-gray-500 text-lg" placeholder="seu.email@example.com">
-                    </div>
-                    <div>
-                        <label for="message" class="block text-gray-700 text-lg font-medium mb-3">Mensagem</label>
-                        <textarea id="message" name="message" rows="7" class="w-full px-5 py-4 rounded-xl border border-gray-300 focus:outline-none focus:ring-4 focus:ring-blue-200 transition-all duration-300 placeholder-gray-500 text-lg" placeholder="Escreva sua mensagem aqui..."></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-blue-700 text-white px-8 py-4 rounded-full text-xl font-bold hover:bg-blue-800 transition-all duration-300 transform hover:scale-105 shadow-lg">
-                        Enviar Mensagem
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer Section -->
-    <footer class="bg-gray-900 text-gray-300 py-10 rounded-t-3xl shadow-inner">
-        <div class="container mx-auto px-6 text-center md:flex md:justify-between md:items-center">
-            <div class="mb-6 md:mb-0">
-                <p class="text-lg">&copy; 2024 Constrular Materiais. Todos os direitos reservados.</p>
-                <p class="text-sm mt-2">Construindo o futuro, hoje.</p>
-            </div>
-            <div class="flex justify-center space-x-8">
-                <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300 transform hover:scale-110">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.776-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.247 0-1.637.779-1.637 1.562V12h2.773l-.443 2.89h-2.33V22H12c5.523 0 10-4.477 10-10z" clip-rule="evenodd" />
-                    </svg>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300 transform hover:scale-110">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M12.315 2.443a.75.75 0 00-.715-.053L2.27 6.697V17.5a.75.75 0 00.75.75h9.255a.75.75 0 00.75-.75V2.443zM18.75 6.697V17.5a.75.75 0 00.75.75h2.25a.75.75 0 00.75-.75V6.697a.75.75 0 00-.75-.75h-2.25a.75.75 0 00-.75.75z" clip-rule="evenodd" />
-                    </svg>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300 transform hover:scale-110">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.286 2.766 7.935 6.666 9.208.485.089.665-.21.665-.467 0-.23-.008-.847-.014-1.66c-2.685.586-3.25-1.295-3.25-1.295-.44-.995-1.07-1.26-.08-1.26.824-.058 1.25.75 1.25.75.735 1.258 1.925.895 2.395.684.075-.53.285-.895.51-1.1C7.5 14.282 4.75 13.292 4.75 8.75c0-.895.31-1.63.824-2.21-.08-.21-.36-.995.075-2.21 0 0 .67-.21 2.21.805.635-.175 1.305-.262 2-.262.695 0 1.365.087 2 .262 1.54-1.015 2.21-.805 2.21-.805.435 1.215.155 2 .075 2.21.515.58.825 1.315.825 2.21 0 4.542-2.75 5.532-5.3 5.81.285.245.545.73.545 1.48 0 1.07-.01 2.42-.01 2.75 0 .257.18.556.665.467C19.234 19.935 22 16.286 22 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
-                    </svg>
-                </a>
-            </div>
-        </div>
+            <footer>
+        <p class="paragrafo-rodape"> Conecta Construção 2025 - &copy; Todos os Direitos Reservados.</p>
     </footer>
+    </main>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu when a link is clicked
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // Intersection Observer for section animations on scroll
-        const sections = document.querySelectorAll('section');
-
-        const observerOptions = {
-            root: null, // viewport
-            rootMargin: '0px',
-            threshold: 0.1 // Trigger when 10% of the section is visible
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('section-visible');
-                    entry.target.classList.remove('section-hidden');
-                    observer.unobserve(entry.target); // Stop observing once animated
-                }
-            });
-        }, observerOptions);
-
-        sections.forEach(section => {
-            // Add a class to hide sections initially, except the home section
-            if (section.id !== 'home') {
-                section.classList.add('section-hidden');
-            }
-            observer.observe(section);
-        });
-    </script>
+    <script src="/assets/js/menuHamburger.js"></script>
 </body>
+
 </html>

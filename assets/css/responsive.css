@@ -1,5 +1,6 @@
 /*Código de resposividade tela inicial*/
 @media (max-width: 1280px) {
+/*===Configuração da responsividade da página index==*/
     .section-caixas_servicos {
         gap: 50px;
         flex-wrap: wrap;
@@ -10,6 +11,7 @@
 
 /*Adapta a página para telas de até 1120 pixels*/
 @media (max-width: 1120px) {
+/*===Configuração da responsividade da página index==*/
     header {
         padding: 20px 40px;
     }
@@ -43,63 +45,12 @@
     }
 }
 
-/* Mostra o menu hamburger e esconde a navegação principal */
-@media (max-width: 780px) {
-    .menu-hamburger {
-        display: flex;
-    }
 
-    .main-nav {
-        position: fixed;
-        top: 0;
-        right: -100%; /* Começa fora da tela */ 
-        width: 60%;
-        height: 100vh;
-        background-color: #ffffff;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 40px;
-        transition: right 0.4s ease-in-out;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-    }
-    
-    /* Quando o menu está ativo */
-    .main-nav.active {
-        right: 0; 
-    }
-
-    .main-nav_link {
-        display: block; /* Para que os links fiquem visíveis */
-        font-size: 1.5em;
-        color: #353535;
-    }
-    
-    /* Animação do botão hamburger para "X" */
-    .menu-hamburger.open .bar:nth-child(1) {
-        transform: rotate(-45deg) translate(-7px, 7px);
-    }
-
-    .menu-hamburger.open .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .menu-hamburger.open .bar:nth-child(3) {
-        transform: rotate(45deg) translate(-7px, -7px);
-    }
-
-    .section-inicio_titulo {
-        font-size: 2em;
-    }
-
-    .section-inicio_subtitulo {
-        font-size: 1em;
-    }
-}
 
 /*Adapta a página para telas de até 445 pixels, celulares de tamanho normal s20, Iphone 14 e semelhantes*/
 
 @media (max-width: 445px) {
+    /*===Configuração da responsividade da página index==*/
     .section-inicio_titulo {
         font-size: 1.6em;
     }
@@ -115,13 +66,45 @@
     }
 
     .section-caixa_servicos__filho {
+        width: 300px;
+        height: 490px;
         font-size: small;
     }
 
+    /*===Configuração da responsividade da página sobre==*/
+    .main-sobre {
+        padding-top: 80px;
+        /* Cabeçalho mobile geralmente é menor */
+    }
+
+    .section-sobre {
+        padding: 2em 1.5em;
+        margin: 5px;
+    }
+
+    .sobre-conteudo {
+        padding: 2em;
+    }
+
+    .sobre-conteudo ul li {
+        padding-left: 2em;
+        font-size: 0.95em;
+    }
+
+    .sobre-conteudo ul li:hover {
+        padding-left: 2.5em;
+    }
+
+    .texto-final_subtitulo {
+        font-size: 1em;
+    }
 }
+
+
 
 /*Adapta a página para telas de celular pequenos (iphone 5 ou semelhantes) ou legados*/
 @media (max-width: 330px) {
+    /*===Configuração da responsividade da página index==*/
     .header-titulo {
         font-size: 1em;
     }
@@ -146,6 +129,24 @@
         height: 6px;
         background-color: #EAB308;
         border-radius: 16px;
+    }
+
+    /*===Configuração da responsividade da página sobre==*/
+    .main-sobre {
+        padding-top: 70px;
+        /* Ainda menor para telas muito pequenas */
+    }
+
+    .section-sobre {
+        padding: 1.5em 1em;
+    }
+
+    .sobre-conteudo {
+        padding: 1.5em;
+    }
+
+    .texto-final {
+        padding: 2rem 1.5em;
     }
 
 }
