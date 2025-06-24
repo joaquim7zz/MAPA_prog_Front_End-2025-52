@@ -1,6 +1,7 @@
 /*Código de resposividade tela inicial*/
 @media (max-width: 1280px) {
-/*===Configuração da responsividade da página index==*/
+
+    /*===Configuração da responsividade da página index==*/
     .section-caixas_servicos {
         gap: 50px;
         flex-wrap: wrap;
@@ -11,7 +12,8 @@
 
 /*Adapta a página para telas de até 1120 pixels*/
 @media (max-width: 1120px) {
-/*===Configuração da responsividade da página index==*/
+
+    /*===Configuração da responsividade da página index==*/
     header {
         padding: 20px 40px;
     }
@@ -43,6 +45,11 @@
     .section-inicio_titulo {
         font-size: 3em;
     }
+
+    .mapa-iframe {
+        width: 50%;
+        height: 150px;
+    }
 }
 
 
@@ -50,6 +57,7 @@
 /*Adapta a página para telas de até 445 pixels, celulares de tamanho normal s20, Iphone 14 e semelhantes*/
 
 @media (max-width: 445px) {
+
     /*===Configuração da responsividade da página index==*/
     .section-inicio_titulo {
         font-size: 1.6em;
@@ -104,6 +112,7 @@
 
 /*Adapta a página para telas de celular pequenos (iphone 5 ou semelhantes) ou legados*/
 @media (max-width: 330px) {
+
     /*===Configuração da responsividade da página index==*/
     .header-titulo {
         font-size: 1em;
@@ -148,5 +157,6 @@
     .texto-final {
         padding: 2rem 1.5em;
     }
+
 
 }

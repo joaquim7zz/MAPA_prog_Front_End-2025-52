@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Verifica se o botão e o menu existem
     if (hamburgerButton && navMenu) {
         hamburgerButton.addEventListener('click', (e) => {
-            e.stopPropagation(); 
-            toggleMenu(); 
+            e.stopPropagation();
+            toggleMenu();
         });
 
         // Adiciona evento para fechar o menu ao clicar em um dos links
