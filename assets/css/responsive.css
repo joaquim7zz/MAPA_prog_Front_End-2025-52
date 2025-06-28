@@ -34,6 +34,10 @@
         font-size: 4rem;
         padding: 120px 0 24px;
     }
+
+        .caixa-produtos {
+        gap: 20px; 
+        padding: 0 20px; 
 }
 
 /*Adapta a página para telas médias como tablets ou modo de rotação*/
@@ -49,6 +53,14 @@
     .mapa-iframe {
         width: 50%;
         height: 150px;
+    }
+
+        .main-produtos {
+        padding-top: 120px; 
+    }
+
+    .produtos {
+        width: 320px;
     }
 }
 
@@ -106,6 +118,38 @@
     .texto-final_subtitulo {
         font-size: 1em;
     }
+
+        .main-produtos {
+        padding-top: 100px;
+    }
+
+    .id-produtos {
+        font-size: 1.5em; 
+    }
+
+    .caixa-produtos {
+        flex-direction: column; 
+        align-items: center;
+        gap: 30px; 
+    }
+
+    .produtos {
+        width: 90%;
+        height: auto;
+        min-height: 510px; 
+    }
+
+    .titulo-produto {
+        font-size: 1.1em;
+    }
+
+    .descricao-produto {
+        font-size: 1.3em;
+    }
+
+    .botao-comprar_texto {
+        font-size: 1.3em; 
+    }
 }
 
 
@@ -158,5 +202,5 @@
         padding: 2rem 1.5em;
     }
 
-
+}
 }

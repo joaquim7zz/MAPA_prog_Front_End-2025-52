@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/produtos.css">
 
     <script src="https://kit.fontawesome.com/821c37cef2.js" crossorigin="anonymous"></script>
 </head>
@@ -16,7 +17,8 @@
 <body>
     <header>
 
-        <a href="/index.html"><img class="logo-conecta" src="/assets/img/logo-conecta.png" alt="logo Conecta construção"></a>
+        <a href="/index.html"><img class="logo-conecta" src="/assets/img/logo-conecta.png"
+                alt="logo Conecta construção"></a>
 
         <button class="menu-hamburger" id="menu-hamburger" aria-label="Abrir menu" aria-haspopup="true"
             aria-controls="menu" aria-expanded="false">
@@ -27,17 +29,63 @@
 
 
         <nav class="main-nav" id="menu">
-            <a class="main-nav_link" href="/index.html">Início</a>
-
-            <a class="main-nav_link" href="contato.html">Contato</a>
-            <a class="main-nav_link" href="sobre.html">sobre</a>
+            <a class="main-nav_link" href="#section-inicio">Início</a>
+            <a class="main-nav_link" href="pages/produtos.html">Produtos</a>
+            <a class="main-nav_link" href="pages/contato.html">Contato</a>
+            <a class="main-nav_link" href="pages/sobre.html">sobre</a>
         </nav>
+
+
     </header>
 
-    <main>
+    <main class="main-produtos">
+        <h1 class="">Nossos Produtos</h1>
+        <h1 id="cimento" class="id-produtos">Cimentos e Argamassas</h1>
+        <div class="caixa-produtos">
+            <div class="produtos">
+                <img class="foto-produto" src="/assets/img/cimento-forti.png" alt="">
+                <h3 class="titulo-produto">Cimento Forti - 50kg</h3>
+                <h2 class="descricao-produto">R$ 40.00</h2>
+                <div class="botao-comprar">
+                    <p class="botao-comprar_texto"> <i class="fa-solid fa-cart-shopping" style="color: #1A42A8;"></i>
+                        Comprar</p>
+                </div>
+            </div>
+            <div class="caixa-produtos">
+            </div>
 
+            <div class="caixa-produtos">
+                <div class="produtos">
+                    <img class="foto-produto" src="/assets/img/cimento-forti.png" alt="">
+                    <h3 class="titulo-produto">Cimento Forti - 50kg</h3>
+                    <h2 class="descricao-produto">R$ 40.00</h2>
+                    <div class="botao-comprar">
+                        <p class="botao-comprar_texto"> <i class="fa-solid fa-cart-shopping"
+                                style="color: #1A42A8;"></i> Comprar</p>
+                    </div>
+                </div>
+                <div class="caixa-produtos">
+                </div>
+
+                <div class="caixa-produtos">
+                    <div class="produtos">
+                        <img class="foto-produto" src="/assets/img/cimento-forti.png" alt="">
+                        <h3 class="titulo-produto">Cimento Forti - 50kg</h3>
+                        <h2 class="descricao-produto">R$ 40.00</h2>
+                        <div class="botao-comprar">
+                            <p class="botao-comprar_texto"> <i class="fa-solid fa-cart-shopping"
+                                    style="color: #1A42A8;"></i> Comprar</p>
+                        </div>
+                    </div>
+                    <div class="caixa-produtos">
+                    </div>
     </main>
+
+    <footer>
+        <p class="paragrafo-rodape"> Conecta Construção 2025 - &copy; Todos os Direitos Reservados.</p>
+    </footer>
 
     <script src="/assets/js/menuHamburger.js"></script>
 </body>
+
 </html>
