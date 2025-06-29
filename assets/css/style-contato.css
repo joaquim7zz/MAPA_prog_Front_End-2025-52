@@ -1,0 +1,137 @@
+/* --- Estilos para a Página de Contato --- */
+
+/* Adiciona um espaçamento no topo do conteúdo principal para não ficar escondido atrás do cabeçalho fixo. */
+main {
+    padding-top: 130px;
+}
+
+/* Estilo do contêiner principal do formulário de contato. */
+.form-contato {
+    background-color: #FFFFFF; /* Fundo branco para o formulário. */
+    padding: 2em;
+    border-radius: 16px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidade. */
+    max-width: 500px; /* Largura máxima para manter o formulário legível em telas grandes. */
+    width: 100%; /* Garante que o formulário seja responsivo em telas menores. */
+    margin: auto; /* Centraliza o formulário na página. */
+}
+
+/* Estilo do título principal do formulário. */
+.titulo-contato {
+    text-align: center; 
+    color: #1A42A8;
+    margin-bottom: 0.5em; /* Espaço abaixo do título. */
+    padding: 20px;
+}
+
+/* Estilo do parágrafo de instrução abaixo do título. */
+.paragrafo-contato {
+    text-align: center;
+    color: #606770; /* Cor de texto cinza, mais suave. */
+    margin-bottom: 1.5em; 
+    font-size: 0.9em; 
+}
+
+/* Define um grupo de formulário (geralmente contém um label e um input). */
+.formulario {
+    margin-bottom: 1.2em; /* Espaço entre cada campo do formulário. */
+}
+
+/* Estilo para (labels) dos campos. */
+label {
+    display: block; /* Faz com que ocupe sua própria linha. */
+    margin-bottom: 0.5em; /* Espaço entre a etiqueta e o campo de entrada. */
+    font-weight: 600; /* Fonte com peso médio. */
+    color: #1A42A8;
+}
+
+/* Estilo padrão para campos de texto e área de texto. */
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccd0d5;
+    border-radius: 16px; 
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+}
+
+/* Aplica o estilo de foco para INPUTS e TEXTAREAS */
+input:focus,
+textarea:focus {
+    outline: none; 
+    border: none;
+    box-shadow: 0 0 0 3px #1A42A8;
+}
+
+/* Estilo específico para a área de texto. */
+textarea {
+    resize: none; /* Não permite que o usuário redimensione a área de texto */
+}
+
+/* Estilo do botão de envio do formulário. */
+.botao-enviar {
+    width: 100%;
+    padding: 12px;
+    background-color: #0056b3; /* Cor de fundo azul mais escura. */
+    color: #FFFFFF; /* Cor do texto branca. */
+    border: none; /* Remove a borda padrão. */
+    border-radius: 16px; 
+    font-size: 1.1em; /* Tamanho da fonte do botão. */
+    cursor: pointer; 
+    transition: background-color 0.6s ease-in-out; /* Animação suave da cor de fundo. */
+}
+
+/* Efeito ao passar o mouse sobre o botão. */
+.botao-enviar:hover {
+    background-color: #F59E0B; /* Muda a cor de fundo para laranja. */
+}
+
+
+/* --- Seção de Informações da Loja e Mapa --- */
+
+/* Título para a seção "Visite-nos". */
+.visite {
+    padding: 20px;
+    color: #1A42A8;
+    text-align: center;
+}
+
+/* Contêiner para as informações da loja física. */
+.info-loja {
+    margin: auto; /* Centraliza a caixa de informações. */
+    width: 70%; /* Define a largura da caixa. */
+    background: white;
+    padding: 25px;
+    margin-bottom: 30px; /* Espaço abaixo da caixa. */
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; /* Sombra mais forte para destaque. */
+    text-align: center;
+}
+
+/* Título dentro da caixa de informações. */
+.info-loja h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+/* Parágrafos dentro da caixa de informações (endereço, telefone, etc.). */
+.info-loja p {
+    color: #666; 
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+/* Contêiner para o mapa incorporado. */
+.mapa {
+    text-align: center; /* Centraliza o mapa (o iframe). */
+    margin-bottom: 30px;
+}
+
+/* Estilo do iframe do mapa. */
+.mapa-iframe {
+    border-radius: 16px; /* Cantos arredondados para o mapa. */
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; /* Sombra sutil. */
+    width: 70%; /* Largura do mapa. */
+    height: 300px; /* Altura do mapa. */
+}

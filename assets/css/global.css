@@ -1,135 +1,152 @@
+/* --- Estilos Globais e de Comportamento --- */
+
 html {
+    /* Ativa a rolagem suave. */
     scroll-behavior: smooth;
 }
 
 body {
+    /* Define uma família de fontes padrão para todo o site, com alternativas caso a primeira não esteja disponível. */
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/*Estilo padrão do cabeçalho, menu hamburger e rodapé*/
+/* --- Estilo padrão do cabeçalho, menu hamburger e rodapé --- */
 
-/*Estilo cabeçalho e menu de navegação*/
+/* --- Estilo Cabeçalho e Menu de Navegação --- */
 header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px 74px 25px;
-    position: fixed;
-    background-color: #FFFFFF;
-    box-shadow: #3535354a 0px 2px 20px 8px;
-    z-index: 1000;
+    width: 100%; /* O cabeçalho ocupa toda a largura da tela. */
+    display: flex; /* Ativa o layout flexbox para alinhar os itens internos. */
+    justify-content: space-between; /* Distribui o espaço entre os itens: logo na esquerda, navegação na direita. */
+    align-items: center; /* Alinha verticalmente os itens no centro. */
+    padding: 25px 74px 25px; /* Espaçamento interno (topo/baixo, laterais). */
+    position: fixed; /* Fixa o cabeçalho no topo da tela, mesmo durante a rolagem. */
+    background-color: #FFFFFF; /* Fundo branco. */
+    box-shadow: #3535354a 0px 2px 20px 8px; /* Adiciona uma sombra sutil para dar profundidade. */
+    z-index: 1000; /* Garante que o cabeçalho fique acima da maioria dos outros elementos da página. */
 }
 
 .logo-conecta {
-    width: 5em;
+    width: 5em; /* Define a largura do logo. */
 }
 
-/* Estilos para o menu de navegação principal */
+/* Estilos para o menu de navegação principal (desktop) */
 .main-nav {
-    display: flex;
-    justify-content: center;
-    font-weight: bold;
-    gap: 20px;
+    display: flex; /* Alinha os links de navegação em linha. */
+    justify-content: center; /* Centraliza os links (útil se não houver outros elementos). */
+    font-weight: bold; /* Deixa a fonte dos links em negrito. */
+    gap: 20px; /* Cria um espaço de 20px entre cada link. */
 }
 
 .main-nav_link {
-    padding-top: 15px;
-    color: #353535;
-    position: relative;
-    transition: color 0.3s ease-in-out;
+    padding-top: 15px; /* Adiciona um espaço no topo do link. */
+    color: #353535; /* Cor do texto do link. */
+    position: relative; /* Necessário para posicionar o pseudo-elemento ::after. */
+    transition: color 0.3s ease-in-out; /* Anima a mudança de cor do link suavemente. */
 }
 
+/* Cria uma linha animada abaixo do link de navegação. */
 .main-nav_link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: #416BDE;
-    transition: width 0.3s ease-in-out;
+    content: ''; /* Pseudo-elementos sempre precisam de 'content'. */
+    position: absolute; /* Posicionado em relação ao link. */
+    bottom: 0; /* Alinhado na parte inferior do link. */
+    left: 0; /* Começa na extremidade esquerda. */
+    width: 0; /* Começa com largura zero, ou seja, invisível. */
+    height: 2px; /* Espessura da linha. */
+    background-color: #416BDE; /* Cor da linha. */
+    transition: width 0.3s ease-in-out; /* Anima a propriedade 'width' suavemente. */
 }
 
+/* Efeito ao passar o mouse sobre o link. */
 .main-nav_link:hover {
-    color: #416BDE;
+    color: #416BDE; /* Muda a cor do texto do link. */
 }
 
+/* Anima a linha para ter 100% da largura ao passar o mouse. */
 .main-nav_link:hover::after {
     width: 100%;
 }
 
-/*configuração do menu hamburger*/
-/* Esconde o menu hamburger em telas maiores */
+
+/* --- Configuração do menu hamburger --- */
+
+/* Esconde o menu hamburger em telas maiores por padrão. */
 .menu-hamburger {
     display: none;
-    flex-direction: column;
-    justify-content: space-around;
+    flex-direction: column; /* Organiza as barras verticalmente. */
+    justify-content: space-around; /* Espaça as barras uniformemente. */
     width: 30px;
     height: 30px;
     background: transparent;
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 1100;
+    z-index: 1100; /* Z-index maior que o header para ficar na frente do menu quando aberto. */
 }
 
+/* Estilo de cada barra do ícone hamburger. */
 .menu-hamburger .bar {
     display: block;
     width: 100%;
     height: 3px;
     background-color: #353535;
     border-radius: 3px;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; /* Anima todas as transformações (rotação, opacidade). */
 }
 
-/* Mostra o menu hamburger e esconde a navegação principal */
+/* --- Media Query para tornar o Menu Responsivo --- */
+/* Aplica estes estilos apenas em telas com largura máxima de 780px. */
 @media (max-width: 780px) {
+    /* Mostra o menu hamburger em telas menores. */
     .menu-hamburger {
         display: flex;
     }
 
+    /* Esconde a navegação principal e a prepara para ser um menu lateral. */
     .main-nav {
-        position: fixed;
+        position: fixed; /* Fixo na tela, sobrepondo o conteúdo. */
         top: 0;
-        right: -100%;
-        /* Começa fora da tela */
+        right: -100%; /* Começa totalmente fora da tela, à direita. */
         width: 60%;
-        height: 100vh;
+        height: 100vh; /* Ocupa a altura total da tela. */
         background-color: #ffffff;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 40px;
-        transition: right 0.4s ease-in-out;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        flex-direction: column; /* Empilha os links verticalmente. */
+        justify-content: center; /* Centraliza os links verticalmente. */
+        align-items: center; /* Centraliza os links horizontalmente. */
+        gap: 40px; /* Aumenta o espaço entre os links. */
+        transition: right 0.4s ease-in-out; /* Anima o deslizamento do menu. */
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1); /* Sombra à esquerda do menu. */
     }
 
-    /* Quando o menu está ativo */
+    /* Classe 'active' (adicionada via JavaScript) para mostrar o menu. */
     .main-nav.active {
-        right: 0;
+        right: 0; /* Desliza o menu para dentro da tela. */
     }
 
+    /* Estilo dos links dentro do menu responsivo. */
     .main-nav_link {
         display: block;
-        /* Para que os links fiquem visíveis */
-        font-size: 1.5em;
+        font-size: 1.5em; /* Aumenta o tamanho da fonte para facilitar o toque. */
         color: #353535;
     }
 
-    /* Animação do botão hamburger para "X" */
+    /* Animação do botão hamburger para um "X" quando o menu está aberto. */
+    /* A classe '.open' é adicionada via JavaScript. */
     .menu-hamburger.open .bar:nth-child(1) {
+        /* Gira a primeira barra para formar a parte de cima do "X". */
         transform: rotate(-45deg) translate(-7px, 7px);
     }
 
     .menu-hamburger.open .bar:nth-child(2) {
+        /* Esconde a barra do meio. */
         opacity: 0;
     }
 
     .menu-hamburger.open .bar:nth-child(3) {
+        /* Gira a terceira barra para formar a parte de baixo do "X". */
         transform: rotate(45deg) translate(-7px, -7px);
     }
 
+    /* Ajustes de fonte para a seção inicial em telas menores. */
     .section-inicio_titulo {
         font-size: 2em;
     }
@@ -140,35 +157,39 @@ header {
 }
 
 
-/*estilo rodapé*/
+/* --- Estilo Rodapé --- */
 footer {
-    background-color: #2c3e50;
-    color: white;
+    background-color: #1A42A8; /* Cor de fundo azul. */
+    margin-top: 100px; /* Espaço de 100px acima do rodapé. */
+    width: 100%; /* Ocupa toda a largura. */
+    color: #FFFFFF; 
     padding: 30px 0;
 }
 
+/* Contêiner para centralizar o conteúdo do rodapé. */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
+/* Layout em grade para o conteúdo principal do rodapé. */
 .footer-conteudo {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    grid-template-columns: 1fr 1fr; /* Duas colunas de largura igual. */
+    gap: 40px; /* Espaço entre as colunas. */
     margin-bottom: 25px;
 }
 
 .empresa h2 {
-    color: #f39c12;
+    color: #f39c12; /* Cor de destaque (laranja). */
     font-size: 1.5em;
     margin-bottom: 15px;
 }
 
 .empresa-info p {
     margin-bottom: 8px;
-    color: #ecf0f1;
+    color: #ecf0f1; /* Cor de texto clara (cinza). */
 }
 
 .contato h3 {
@@ -183,41 +204,44 @@ footer {
 }
 
 .contato-info a {
-    color: #f39c12;
+    color: #f39c12; /* Links com a cor de destaque. */
 }
 
 .contato-info a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Sublinha o link ao passar o mouse. */
 }
 
+/* Estilo para a caixa de aviso. */
 .aviso {
-    background-color: #34495e;
+    background-color: #000000; /* Fundo um pouco mais escuro. */
     padding: 15px;
     border-radius: 5px;
     margin-bottom: 20px;
 }
 
 .aviso strong {
-    color: #e74c3c;
+    color: #ff1900; /* Cor de destaque para o "Aviso". */
 }
 
 .aviso p {
-    color: #bdc3c7;
+    color: #ffffff; /* Cor de texto mais suave. */
     font-size: 0.9em;
-    line-height: 1.4;
+    line-height: 1.4; /* Melhora a legibilidade. */
 }
 
+/* Informações finais do rodapé (copyright). */
 .footer-info {
     text-align: center;
     padding-top: 15px;
-    border-top: 1px solid #34495e;
-    color: #95a5a6;
+    border-top: 1px solid #f39c12; /* Linha separadora. */
+    color: #95a5a6; /* Cor de texto suave. */
     font-size: 0.9em;
 }
 
+/* Media Query para tornar o Rodapé Responsivo */
 @media (max-width: 768px) {
     .footer-conteudo {
-        grid-template-columns: 1fr;
-        gap: 25px;
+        grid-template-columns: 1fr; /* Muda o layout para uma única coluna. */
+        gap: 25px; /* Reduz o espaço entre as seções. */
     }
 }

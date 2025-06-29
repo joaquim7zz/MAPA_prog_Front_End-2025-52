@@ -1,0 +1,164 @@
+/* --- Estilos Gerais para a Página de Produtos --- */
+
+/* Define o contêiner principal para a seção de produtos. */
+.main-produtos {
+    max-width: 1200px; /* Define uma largura máxima para o conteúdo, mantendo a legibilidade em telas grandes. */
+    margin: 0 auto; /* Centraliza na página. */
+    padding: 2rem 1rem; /* Adiciona espaçamento interno. */
+}
+
+/* Estiliza o primeiro H1 dentro de .main-produtos, que é o título principal da página. */
+.main-produtos h1:first-child {
+    padding-top: 100px; /* Adiciona um espaço no topo para não ficar colado no cabeçalho. */
+    text-align: center;
+    font-size: 2.5rem; /* Define um tamanho de fonte grande. */
+    margin-bottom: 1rem; /* Adiciona um espaço abaixo do título. */
+    color: #2a59d1; /* Define a cor do texto para um tom de azul. */
+    font-weight: 700; 
+}
+
+/* Estiliza o subtítulo ou texto de identificação da seção de produtos. */
+.id-produtos {
+    text-align: center; /* Centraliza o texto. */
+    font-size: 1.8rem; /* Define o tamanho da fonte. */
+    margin-bottom: 3rem; /* Adiciona um espaço abaixo, separando do grid de produtos. */
+    color: #64748b; /* Define uma cor de texto mais suave. */
+    font-weight: 500; /* Define um peso de fonte médio. */
+    position: relative; /* Necessário para posicionar o pseudo-elemento ::after. */
+}
+
+/* Cria uma linha decorativa abaixo do subtítulo. */
+.id-produtos::after {
+    content: '';
+    position: absolute; /* Posiciona o elemento em relação ao .id-produtos. */
+    bottom: -10px; /* Posiciona a linha 10px abaixo do texto. */
+    left: 50%; /* Centraliza o início da linha no meio. */
+    transform: translateX(-50%); /* Ajusta a posição para que o centro da linha fique alinhado ao centro do contêiner. */
+    width: 80px; /* Define a largura da linha. */
+    height: 3px; /* Define a altura (espessura) da linha. */
+    background: linear-gradient(90deg, #eab308, #2a59d1); /* Cria um fundo com gradiente de amarelo para azul. */
+    border-radius: 2px;
+}
+
+/* --- Layout do Grid de Produtos --- */
+
+/* Define o contêiner que agrupa todos os cards de produtos. */
+.caixa-produtos {
+    width: 100%; /* Ocupa toda a largura do contêiner pai (.main-produtos). */
+    display: grid; /* Ativa o layout em grade (CSS Grid). */
+    grid-template-columns: repeat(4, 1fr); /* Cria 4 colunas de largura igual. '1fr' é uma unidade de fração do espaço disponível. */
+    gap: 2rem; /* Define o espaço entre os cards, tanto nas linhas quanto nas colunas. */
+    margin-bottom: 2rem; /* Adiciona um espaço abaixo do grid. */
+}
+
+/* --- Estilo do Card de Produto Individual --- */
+.produtos {
+    background: white; /* Define o fundo do card como branco. */
+    border-radius: 16px; /* Arredonda os cantos do card. */
+    padding: 1.5rem; /* Adiciona espaçamento interno. */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Adiciona uma sombra sutil para um efeito "flutuante". */
+    transition: all 0.3s ease; /* Anima todas as propriedades (transform, box-shadow) de forma suave. */
+    border: 1px solid #e2e8f0; /* Adiciona uma borda clara. */
+    position: relative; /* Necessário para posicionar o pseudo-elemento ::before. */
+    overflow: hidden; /* Garante que elementos filhos não "vazem" para fora do card arredondado. */
+}
+
+/* Cria uma borda superior colorida e decorativa no card. */
+.produtos::before {
+    content: '';
+    position: absolute;
+    top: 0; /* Alinha no topo. */
+    left: 0; /* Alinha à esquerda. */
+    right: 0; /* Estica até a direita. */
+    height: 4px; /* Define a espessura da borda. */
+    background: linear-gradient(90deg, #eab308, #2a59d1); /* Define o fundo com o mesmo gradiente da linha do título. */
+}
+
+/* Efeito ao passar o mouse sobre o card. */
+.produtos:hover {
+    transform: translateY(-5px); /* Move o card 5px para cima. */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* Aumenta a sombra para um efeito de destaque. */
+}
+
+/* Estilo da imagem do produto. */
+.foto-produto {
+    object-fit: cover; /* Faz a imagem cobrir todo o espaço disponível sem distorcer. */
+    border-radius: 12px; /* Arredonda os cantos da imagem. */
+    margin-bottom: 1rem; /* Adiciona espaço abaixo da imagem. */
+}
+
+/* Estilo do nome do produto. */
+.titulo-produto {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #1e293b; /* Cor de texto escura (quase preto). */
+    line-height: 1.4; /* Melhora a legibilidade para títulos com mais de uma linha. */
+}
+
+/* Estilo do preço do produto (usando a classe de descrição). */
+.descricao-produto {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2a59d1; /* Cor azul de destaque para o preço. */
+    margin-bottom: 1.5rem;
+}
+
+/* Estilo do contêiner do botão de compra. */
+.botao-comprar {
+    background: linear-gradient(135deg, #eab308 0%, #f59e0b 100%); /* Fundo com gradiente amarelo/laranja. */
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+/* Centraliza o botão dentro do seu contêiner, se necessário. */
+.botao-comprar button {
+    margin: auto;
+}
+
+/* Efeito ao passar o mouse sobre o botão. */
+.botao-comprar:hover {
+    background: linear-gradient(135deg, #d97706 0%, #eab308 100%); /* Escurece o gradiente. */
+    transform: scale(1.02); /* Aumenta levemente o tamanho do botão. */
+}
+
+/* Estilo do texto e ícone dentro do botão. */
+.botao-comprar_texto {
+    color: white;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin: 0;
+    display: flex; /* Ativa o flexbox para alinhar o texto e o ícone. */
+    align-items: center; /* Alinha verticalmente. */
+    justify-content: center; /* Alinha horizontalmente. */
+    gap: 0.5rem; /* Adiciona um espaço entre o texto e o ícone. */
+}
+
+/* Estilo específico para o ícone no botão. */
+.botao-comprar_texto i {
+    color: white !important; /* Força a cor branca, sobrescrevendo outras regras se necessário. */
+    font-size: 1rem;
+}
+
+
+/* --- Responsividade para a página de produtos --- */
+
+/* Para tablets e telas menores - a partir de 1023px para baixo. */
+@media (max-width: 1023px) {
+    .caixa-produtos {
+        grid-template-columns: repeat(2, 1fr); /* Muda o grid para 2 colunas. */
+        gap: 1.5rem; /* Reduz o espaço entre os cards. */
+    }
+}
+
+/* Ajuste fino para celulares - a partir de 767px para baixo. */
+@media (max-width: 767px) {
+    .caixa-produtos {
+        /* O grid continua com 2 colunas por padrão, mas pode ser mudado para 1 se desejado. */
+        /* Ex: grid-template-columns: 1fr; */
+        gap: 1rem; /* Reduz ainda mais o espaço entre os cards para telas pequenas. */
+    }
+}
