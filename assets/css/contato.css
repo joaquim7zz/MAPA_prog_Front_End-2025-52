@@ -12,14 +12,14 @@ main {
     margin: auto;
 }
 
-h1 {
+.titulo-contato {
     text-align: center;
     color: #1A42A8;
     margin-bottom: 0.5em;
     padding: 20px;
 }
 
-p {
+.paragrafo-contato {
     text-align: center;
     color: #606770;
     margin-bottom: 1.5em;
@@ -65,22 +65,44 @@ textarea {
     background-color: #F59E0B;
 }
 
-#status-menssagem {
-    color: #fa383e;
-    font-size: 0.9em;
-    margin-top: 10px;
+.visite {
+    padding: 20px;
+    color: #1A42A8;
     text-align: center;
-    display: none;
+}
+
+.info-loja {
+    margin: auto;
+    width: 70%;
+    background: white;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+}
+
+.info-loja h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+.info-loja p {
+    color: #666;
+    font-size: 1em;
+    margin-bottom: 10px;
 }
 
 .mapa {
     text-align: center;
+    margin-bottom: 30px;
 
 }
 
 .mapa-iframe {
     border-radius: 16px;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;    
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     width: 70%;
     height: 300px;
 }
