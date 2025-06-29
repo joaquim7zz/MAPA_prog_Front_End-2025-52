@@ -103,6 +103,10 @@
     text-align: center;
 }
 
+.botao-comprar button {
+    margin: auto;
+}
+
 .botao-comprar:hover {
     background: linear-gradient(135deg, #d97706 0%, #eab308 100%);
     transform: scale(1.02);
