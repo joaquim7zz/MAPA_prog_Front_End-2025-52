@@ -1,25 +1,22 @@
-/*Código de resposividade tela inicial*/
-@media (max-width: 1280px) {
 
-    /*===Configuração da responsividade da página index==*/
+
+/* Telas Grandes - até 1280px */
+@media (max-width: 1280px) {
     .section-caixas_servicos {
         gap: 50px;
         flex-wrap: wrap;
         padding: 0 20px;
     }
-
 }
 
-/*Adapta a página para telas de até 1120 pixels*/
+/* Telas Médias-Grandes (Notebooks) - até 1120px */
 @media (max-width: 1120px) {
-
-    /*===Configuração da responsividade da página index==*/
     header {
         padding: 20px 40px;
     }
 
     .header-titulo {
-        font-size: 1.8em;
+        font-size: 1.8rem;
     }
 
     .main-nav {
@@ -34,67 +31,53 @@
         font-size: 4rem;
         padding: 120px 0 24px;
     }
-
-        .caixa-produtos {
-        gap: 20px; 
-        padding: 0 20px; 
 }
 
-/*Adapta a página para telas médias como tablets ou modo de rotação*/
+
+
+/* Telas Médias (Tablets) - até 920px */
 @media (max-width: 920px) {
     .header-titulo {
-        font-size: 1.6em;
+        font-size: 1.6rem;
     }
 
     .section-inicio_titulo {
-        font-size: 3em;
+        font-size: 3rem;
     }
 
     .mapa-iframe {
         width: 50%;
         height: 150px;
     }
-
-        .main-produtos {
-        padding-top: 120px; 
-    }
-
-    .produtos {
-        width: 320px;
-    }
 }
 
 
-
-/*Adapta a página para telas de até 445 pixels, celulares de tamanho normal s20, Iphone 14 e semelhantes*/
-
+/* Telas Extra-Pequenas (Celulares em modo retrato) - até 445px */
 @media (max-width: 445px) {
-
-    /*===Configuração da responsividade da página index==*/
+    /*--- INDEX ---*/
     .section-inicio_titulo {
-        font-size: 1.6em;
+        font-size: 1.8rem; 
     }
 
     .section-inicio_subtitulo {
-        font-size: 1.1em;
+        font-size: 1.1rem;
         font-weight: 200;
         padding-inline: 45px;
     }
 
     .section-inicio_botao {
-        font-size: large;
+        font-size: 1.1rem; 
     }
 
     .section-caixa_servicos__filho {
         width: 300px;
-        height: 490px;
-        font-size: small;
+        height: auto; 
+        font-size: 0.9rem;
     }
 
-    /*===Configuração da responsividade da página sobre==*/
+    /*--- SOBRE ---*/
     .main-sobre {
         padding-top: 80px;
-        /* Cabeçalho mobile geralmente é menor */
     }
 
     .section-sobre {
@@ -103,63 +86,28 @@
     }
 
     .sobre-conteudo {
-        padding: 2em;
+        padding: 1.5em; /* Reduzido para consistência */
     }
 
     .sobre-conteudo ul li {
-        padding-left: 2em;
+        padding-left: 1.5em;
         font-size: 0.95em;
     }
 
     .sobre-conteudo ul li:hover {
-        padding-left: 2.5em;
+        padding-left: 2em;
     }
 
     .texto-final_subtitulo {
         font-size: 1em;
     }
-
-        .main-produtos {
-        padding-top: 100px;
-    }
-
-    .id-produtos {
-        font-size: 1.5em; 
-    }
-
-    .caixa-produtos {
-        flex-direction: column; 
-        align-items: center;
-        gap: 30px; 
-    }
-
-    .produtos {
-        width: 90%;
-        height: auto;
-        min-height: 510px; 
-    }
-
-    .titulo-produto {
-        font-size: 1.1em;
-    }
-
-    .descricao-produto {
-        font-size: 1.3em;
-    }
-
-    .botao-comprar_texto {
-        font-size: 1.3em; 
-    }
 }
 
-
-
-/*Adapta a página para telas de celular pequenos (iphone 5 ou semelhantes) ou legados*/
+/* Telas Mínimas (Celulares antigos ou menores) - até 330px */
 @media (max-width: 330px) {
-
-    /*===Configuração da responsividade da página index==*/
+    /*--- INDEX ---*/
     .header-titulo {
-        font-size: 1em;
+        font-size: 1rem;
     }
 
     .section-inicio {
@@ -168,12 +116,6 @@
 
     .section-inicio_subtitulo {
         display: none;
-        padding: 50px;
-    }
-
-    .section-caixa_servicos__filho {
-        font-weight: lighter;
-
     }
 
     .caixa-servicos_traco {
@@ -184,23 +126,16 @@
         border-radius: 16px;
     }
 
-    /*===Configuração da responsividade da página sobre==*/
+    /*--- SOBRE ---*/
     .main-sobre {
         padding-top: 70px;
-        /* Ainda menor para telas muito pequenas */
     }
 
     .section-sobre {
         padding: 1.5em 1em;
     }
 
-    .sobre-conteudo {
-        padding: 1.5em;
-    }
-
     .texto-final {
         padding: 2rem 1.5em;
     }
-
-}
 }
