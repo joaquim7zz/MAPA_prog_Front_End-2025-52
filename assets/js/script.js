@@ -21,3 +21,21 @@ window.addEventListener('load', function () {
         }
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('form-contato');
+    const inputs = ['nome', 'email', 'assunto', 'mensagem'].map(id => document.getElementById(id));
+    const botaoEnviar = form.querySelector('.botao-enviar');
+    
+    const liberaBotao = () => {
+        const allFilled = inputs.every(input => input.value.trim() !== '');
+        
+        botaoEnviar.disabled = !allFilled;
+        botaoEnviar.style.cssText = allFilled 
+            ? 'cursor: pointer; background-color: #0056b3; opacity: 1'
+            : 'cursor: not-allowed; background-color: #cccccc; opacity: 0.7';
+    };
+    
+    liberaBotao(); // Estado inicial
+    inputs.forEach(input => input.addEventListener('input', liberaBotao));
+}); 
