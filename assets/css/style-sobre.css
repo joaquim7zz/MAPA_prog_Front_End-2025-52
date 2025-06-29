@@ -98,7 +98,7 @@ h3.sobre-subtitulo {
 }
 
 /* Estilo para texto em negrito (<strong>). */
-strong {
+.destaque {
     color: #2a59d1;
     font-weight: 600;
 }
