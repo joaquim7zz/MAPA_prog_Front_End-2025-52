@@ -135,3 +135,22 @@ textarea {
     width: 70%; /* Largura do mapa. */
     height: 300px; /* Altura do mapa. */
 }
+
+/* --- NOVOS ESTILOS --- */
+
+/* Adiciona um asterisco vermelho para indicar que o campo é obrigatório */
+.formulario label::after {
+    content: ' *';
+    color: #ff0000;
+    margin-left: 2px;
+}
+
+/* Estilo para campos preenchidos, aplicando a borda azul */
+input.input-filled,
+textarea.input-filled {
+    border: none;
+    background-color: #0056B3;
+    color: #FFFFFF;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 1px 10px 20px 0px #000000a1;
+}

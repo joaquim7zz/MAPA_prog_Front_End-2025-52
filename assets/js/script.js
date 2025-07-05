@@ -36,7 +36,6 @@ window.addEventListener('load', function () {
 
 // Adiciona um "ouvinte" que executa uma função assim que o HTML da página é completamente carregado e analisado.
 document.addEventListener('DOMContentLoaded', () => {
-    // Seleciona o formulário pelo seu ID.
     const form = document.getElementById('form-contato');
     // Cria um array com todos os elementos de input/textarea necessários para a validação.
     const inputs = ['nome', 'email', 'assunto', 'mensagem'].map(id => document.getElementById(id));
@@ -44,25 +43,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const botaoEnviar = form.querySelector('.botao-enviar');
     
     /**
-     * Função que verifica se todos os campos estão preenchidos e habilita/desabilita o botão de envio.
+     * Função que verifica os campos, aplica estilos e gerencia o estado do botão de envio.
      */
-    const liberaBotao = () => {
-        // A função 'every' verifica se TODOS os inputs no array passam na condição.
-        // A condição é: o valor do input, sem espaços em branco no início ou fim (.trim()), não está vazio.
-        const allFilled = inputs.every(input => input.value.trim() !== '');
+    const checkInputsState = () => {
+        let allFilled = true; // Assume que todos estão preenchidos.
+
+        inputs.forEach(input => {
+            if (input.value.trim() !== '') {
+                input.classList.add('input-filled'); // Adiciona a classe para a borda azul.
+            } else {
+                input.classList.remove('input-filled'); // Remove a classe se o campo estiver vazio.
+                allFilled = false; // Marca que pelo menos um campo não está preenchido.
+            }
+        });
         
         // Desabilita o botão se 'allFilled' for falso, e habilita se for verdadeiro.
         botaoEnviar.disabled = !allFilled;
-        // Altera o estilo do botão com base no seu estado (habilitado ou desabilitado) usando um operador ternário.
+        // Altera o estilo do botão com base no seu estado (habilitado ou desabilitado).
         botaoEnviar.style.cssText = allFilled 
             ? 'cursor: pointer; background-color: #0056b3; opacity: 1' // Estilo para botão habilitado
             : 'cursor: not-allowed; background-color: #cccccc; opacity: 0.7'; // Estilo para botão desabilitado
     };
     
-    // Chama a função uma vez no início para definir o estado inicial do botão (que será desabilitado).
-    liberaBotao(); 
+    // Chama a função uma vez no início para definir o estado inicial do botão e dos campos.
+    checkInputsState(); 
     
     // Adiciona um "ouvinte" de evento para CADA um dos inputs.
     // O evento 'input' é acionado toda vez que o valor do campo muda.
-    inputs.forEach(input => input.addEventListener('input', liberaBotao));
+    inputs.forEach(input => input.addEventListener('input', checkInputsState));
 });
