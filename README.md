@@ -1,49 +1,30 @@
-```markdown
-# Projeto Conecta Construção
+# Conecta Construção
 
-## Visão Geral
+## 📌 Visão Geral
 
-O "Conecta Construção" é um projeto de site institucional fictício para uma loja de materiais de construção, desenvolvido como parte da disciplina de Programação Front-End do curso de Engenharia de Software. O objetivo principal foi criar uma experiência web completa, responsiva e interativa, simulando um ambiente real de um e-commerce do setor.
+**Conecta Construção** é um site institucional fictício desenvolvido como parte da disciplina de **Programação Front-End** no curso de **Engenharia de Software**. O objetivo foi criar uma experiência web completa, responsiva e interativa para simular o ambiente de um e-commerce do setor de materiais de construção.
 
-O site apresenta os serviços da empresa, um catálogo de produtos e uma página de contato funcional. O projeto foi desenvolvido por Joaquim de Sena Silva.
+O site apresenta os serviços da empresa, um catálogo de produtos e uma página de contato com validação de formulário.  
 
-**Acesse o site:** [https://mapa-prog-front-end-2025-52.vercel.app/](https://mapa-prog-front-end-2025-52.vercel.app/)
-
-**Repositório do projeto:** [https://github.com/joaquim7zz/MAPA_prog_Front_End-2025-52](https://github.com/joaquim7zz/MAPA_prog_Front_End-2025-52)
+📎 **Acesse o site:** [mapa-prog-front-end-2025-52.vercel.app](https://mapa-prog-front-end-2025-52.vercel.app/)  
 
 ---
 
-## Capturas de Tela
 
-| Página Inicial - Desktop | Página Inicial - Mobile |
-| :---: | :---: |
-| ![Tela inicial desktop](httpsa//file.garden/Z826x7-y52V-J2dJ/ConectaConstrucao/desktop-home.png) | ![Tela inicial mobile](httpsa//file.garden/Z826x7-y52V-J2dJ/ConectaConstrucao/mobile-home.png) |
-| **Produtos - Desktop** | **Produtos - Mobile** |
-| ![Tela de produtos desktop](httpsa//file.garden/Z826x7-y52V-J2dJ/ConectaConstrucao/desktop-produtos.png) | ![Tela de produtos mobile](httpsa//file.garden/Z826x7-y52V-J2dJ/ConectaConstrucao/mobile-produtos.png) |
-| **Contato - Desktop** | **Menu Hamburger - Mobile** |
-| ![Tela de contato desktop](httpsa//file.garden/Z826x7-y52V-J2dJ/ConectaConstrucao/desktop-contato.png) | ![Menu hamburger aberto](httpsa//file.garden/Z826x7-y52V-J2dJ/ConectaConstrucao/mobile-menu.png) |
-| **Mensagem de Agradecimento - Desktop** | **Página Sobre - Desktop** |
-| ![Tela de mensagem desktop](httpsa//file.garden/Z826x7-y52V-J2dJ/ConectaConstrucao/desktop-mensagem.png) | ![Tela sobre desktop](httpsa//file.garden/Z826x7-y52V-J2dJ/ConectaConstrucao/desktop-sobre.png) |
+## 🎯 Objetivos do Projeto
+
+- Criar um site responsivo com layout adaptável de 1920x1080 até 320x568 pixels.
+- Utilizar HTML5, CSS3 e JavaScript para estruturar, estilizar e adicionar interatividade.
+- Aplicar boas práticas de organização e semântica no código.
+- Exercitar o design responsivo com foco na experiência do usuário.
 
 ---
 
-## Objetivos do Projeto
+## 📁 Estrutura de Arquivos
 
-* Desenvolver uma página web responsiva que se adapte desde telas de 1920x1080 pixels até 320x568 pixels.
-* Construir, estilizar e adicionar interatividade utilizando HTML5, CSS3 e JavaScript.
-* Aplicar boas práticas de desenvolvimento e estruturação de código.
-* Praticar conceitos de design responsivo para múltiplos dispositivos.
-
----
-
-## Estrutura de Arquivos
-
-O projeto está organizado da seguinte maneira para garantir clareza e manutenibilidade:
-
-```
-
+```plaintext
 /
-├── index.html                \# Página principal
+├── index.html                  # Página inicial
 ├── pages/
 │   ├── sobre.html
 │   ├── produtos.html
@@ -51,61 +32,65 @@ O projeto está organizado da seguinte maneira para garantir clareza e manutenib
 │   └── mensagem.html
 ├── assets/
 │   ├── css/
-│   │   ├── reset.css         \# Reset de estilos padrão dos navegadores
-│   │   ├── global.css        \# Estilos globais (header, footer, menu)
-│   │   ├── responsive.css    \# Media queries para responsividade
-│   │   ├── style-index.css     \# Estilos da página principal
-│   │   ├── style-sobre.css     \# Estilos da página "Sobre"
-│   │   ├── style-produtos.css  \# Estilos da página de produtos
-│   │   └── style-contato.css   \# Estilos da página de contato
+│   │   ├── reset.css           # Reset de estilos
+│   │   ├── global.css          # Header, footer, menu e fontes
+│   │   ├── responsive.css      # Media queries
+│   │   ├── style-index.css     # Estilo da home
+│   │   ├── style-sobre.css     # Estilo da página Sobre
+│   │   ├── style-produtos.css  # Estilo da página Produtos
+│   │   └── style-contato.css   # Estilo da página Contato
 │   ├── js/
-│   │   ├── script.js         \# Validação do formulário e mensagem personalizada
-│   │   └── menuHamburger.js  \# Lógica do menu hamburger
+│   │   ├── script.js           # Validação do formulário
+│   │   └── menuHamburger.js    # Lógica do menu mobile
 │   └── img/
-│       ├── logo/             \# Logo e favicon
-│       └── produtos/         \# Imagens dos produtos
+│       ├── logo/               # Logo e favicon
+│       └── produtos/           # Imagens dos produtos
 └── Leia-me.txt
 
+---
 ```
 
+## 🛠️ Tecnologias Utilizadas
+
+- **HTML5:** Estruturação semântica do conteúdo, utilizando tags como `<header>`, `<nav>`, `<main>`, `<section>` e `<footer>`.
+- **CSS3:** Estilização visual, animações e construção de um design responsivo com `media queries`.
+- **JavaScript:** Implementação da interatividade, como validação do formulário de contato e controle do menu "hamburger".
+- **Font Awesome:** Biblioteca usada para inclusão de ícones decorativos e funcionais.
+- **Git & GitHub:** Controle de versão e hospedagem do repositório.
+- **Vercel:** Plataforma utilizada para deploy e hospedagem do site.
 
 ---
 
-## Tecnologias Utilizadas
+## ⚙️ Funcionalidades e Conceitos Aplicados
 
-* **HTML5:** Utilizado para a estruturação semântica do conteúdo, com o uso de tags como `<header>`, `<nav>`, `<main>`, `<section>` e `<footer>`.
-* **CSS3:** Aplicado para toda a estilização visual, animações e a criação do design responsivo através de `media queries`.
-* **JavaScript:** Utilizado para a interatividade da página, como a validação do formulário de contato e a manipulação do menu "hamburger".
-* **Font Awesome:** Implementado para adicionar ícones decorativos.
-* **Git e GitHub:** Para o controle de versão do projeto.
-* **Vercel:** Plataforma utilizada para a publicação e deploy do site.
+### 🎨 Design e Interatividade
 
----
+- **Paleta de Cores:** Azul (confiança), branco e cinza claro (leitura), laranja e amarelo (chamadas à ação).
+- **Efeitos de Hover:** Feedback visual em botões, links e cards para aprimorar a usabilidade.
+- **Design Responsivo:** Abordagem *desktop-first*, com adaptação para telas menores (tablets e smartphones) via *media queries*.
 
-## Funcionalidades e Conceitos Aplicados
+### 🧠 Funcionalidades em JavaScript
 
-### Design e Interatividade
-* **Paleta de Cores:** O design foi projetado para ser limpo e intuitivo. O **azul** transmite confiança, o **branco e cinza claro** facilitam a leitura, e os tons de **laranja e amarelo** são usados em botões para atrair a atenção.
-* **Efeitos de Hover:** Efeitos de `hover` foram aplicados em links, botões e cards para fornecer feedback visual ao usuário, melhorando a experiência de navegação.
-* **Design Responsivo:** O layout foi construído com uma abordagem *desktop-first*, adaptando-se a diferentes tamanhos de tela (desktops, tablets e smartphones) através de *media queries*.
-
-### JavaScript
-* **Menu Hamburger:** Um menu "hamburger" foi implementado para garantir uma navegação fluida em dispositivos móveis. O menu é acionado por um clique, transforma o ícone em um "X" e pode ser fechado clicando em um link ou fora da área do menu.
-* **Validação de Formulário:** Na página de contato, o botão de envio permanece desabilitado até que todos os campos obrigatórios sejam preenchidos. Os campos preenchidos recebem um destaque visual, fornecendo um feedback instantâneo ao usuário.
-* **Mensagem Personalizada:** Após o envio bem-sucedido do formulário, o usuário é redirecionado para uma página de agradecimento que exibe seu nome, capturado a partir dos parâmetros da URL.
-* **Manipulação do DOM:** A interatividade do site foi desenvolvida através da manipulação direta do DOM, associando funções a eventos como cliques e entradas de dados nos formulários.
+- **Menu Hamburger:** Ativado por clique, alterna o ícone para um "X" e fecha automaticamente ao clicar fora da área ou em um link.
+- **Validação de Formulário:** O botão de envio permanece desabilitado até o preenchimento completo dos campos obrigatórios, com realce visual nos campos válidos.
+- **Mensagem Personalizada:** Após o envio do formulário, o usuário é redirecionado para uma página de agradecimento com o nome capturado via parâmetros da URL.
+- **Manipulação do DOM:** Eventos como cliques e digitação são tratados com funções JavaScript que interagem diretamente com o DOM.
 
 ---
 
-## Como Executar o Projeto Localmente
+## Erro ao executar localmente
 
-Caso encontre algum problema com o JavaScript na versão local, tente uma das seguintes opções:
+Se o JavaScript não funcionar corretamente na versão local (devido a restrições do navegador), siga uma das opções abaixo:
 
-1.  **Acessar a versão online:**
-    [https://mapa-prog-front-end-2025-52.vercel.app/](https://mapa-prog-front-end-2025-52.vercel.app/)
+### ✅ 1. Acesse a versão online
 
-2.  **Executar com a extensão Live Server no VS Code:**
-    * Instale a extensão [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) no Visual Studio Code.
-    * Abra a pasta do projeto no VS Code.
-    * Clique com o botão direito no arquivo `index.html` e selecione "Open with Live Server".
-```
+👉 [https://mapa-prog-front-end-2025-52.vercel.app/](https://mapa-prog-front-end-2025-52.vercel.app/)
+
+### ✅ 2. Execute localmente com Live Server
+
+1. Instale a extensão [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) no Visual Studio Code.
+2. Abra a pasta do projeto no VS Code.
+3. Clique com o botão direito no arquivo `index.html` e selecione **"Open with Live Server"**.
+
+---
+
